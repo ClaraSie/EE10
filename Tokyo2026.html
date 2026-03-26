@@ -11,6 +11,7 @@
             --accent: #FFB7C5; /* 櫻花粉 */
             --accent-dark: #D14545;
             --nature: #4A674F;
+            --vjw-blue: #00529b;
             --bg-main: #FFFBFA;
             --bg-card: rgba(255, 255, 255, 0.9);
             --text-main: #333333;
@@ -93,12 +94,16 @@
         .time { font-family: monospace; font-weight: 800; color: var(--accent-dark); font-size: 15px; margin-bottom: 8px; display: block; }
         .item-content { background: #fff; padding: 18px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
 
-        /* 按鈕與地圖 */
-        .map-link {
-            display: inline-flex; align-items: center; margin-top: 10px;
-            color: var(--nature); font-size: 13px; text-decoration: none;
-            font-weight: 700; background: #e8f5e9; padding: 6px 12px; border-radius: 8px;
+        /* 按鈕與連結 */
+        .btn-link {
+            display: inline-flex; align-items: center; justify-content: center; margin-top: 10px;
+            font-size: 13px; text-decoration: none; font-weight: 700; 
+            padding: 8px 16px; border-radius: 10px; transition: 0.2s;
+            width: 100%;
         }
+        .btn-map { color: var(--nature); background: #e8f5e9; }
+        .btn-vjw { color: white; background: var(--vjw-blue); border: 1px solid var(--vjw-blue); }
+        .btn-flight { color: var(--primary); background: #f0f4f8; border: 1px solid #d1d9e6; }
 
         /* 櫻花頁面專屬 */
         .sakura-map-img {
@@ -127,24 +132,34 @@
             <p style="opacity:0.9; margin:10px 0 0; font-size: 14px;">櫻花婚紗之旅 • 3/30 - 4/3</p>
         </div>
         <div class="container">
+            <!-- 住宿資訊 -->
             <div class="card">
                 <div class="title"><span>🏨</span> 飯店資訊</div>
                 <p style="font-weight: bold; margin-bottom: 5px;">Richmond Hotel Premier Tokyo Schole</p>
                 <p style="font-size: 13px; color: var(--text-sub);">〒131-0045 東京都墨田区押上１丁目１０−3</p>
-                <a href="https://www.google.com/maps/search/?api=1&query=Richmond+Hotel+Premier+Tokyo+Schole" class="map-link" target="_blank">📍 開啟地圖</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Richmond+Hotel+Premier+Tokyo+Schole" class="btn-link btn-map" target="_blank">📍 開啟地圖導航</a>
             </div>
+
+            <!-- 航班資訊 -->
             <div class="card">
                 <div class="title"><span>✈️</span> 航班資訊</div>
-                <div style="display:flex; justify-content:space-between; margin-top:10px">
+                <div style="display:flex; justify-content:space-between; margin-top:10px; margin-bottom: 15px;">
                     <div style="background: #f8f9fa; padding: 12px; border-radius: 12px; flex: 1; margin-right: 8px;">
-                        <div style="font-size:11px; color:var(--text-sub); font-weight: 700;">3/30 CI126</div>
+                        <div style="font-size:11px; color:var(--text-sub); font-weight: 700;">3/30 去程 CI126</div>
                         <div style="font-weight:800;">12:55 - 17:35</div>
                     </div>
                     <div style="background: #f8f9fa; padding: 12px; border-radius: 12px; flex: 1; margin-left: 8px;">
-                        <div style="font-size:11px; color:var(--text-sub); font-weight: 700;">4/3 CI127</div>
+                        <div style="font-size:11px; color:var(--text-sub); font-weight: 700;">4/3 回程 CI127</div>
                         <div style="font-weight:800;">18:35 - 21:40</div>
                     </div>
                 </div>
+                <a href="https://www.china-airlines.com/tw/zh/fly/flight-status/index" class="btn-link btn-flight" target="_blank">🕒 查詢華航航班即時動態</a>
+            </div>
+            <!-- 入境準備 -->
+            <div class="card">
+                <div class="title"><span>📋</span> 入境準備</div>
+                <p style="font-size: 13px; margin-bottom: 10px; color: var(--text-sub);">請確保已完成 Visit Japan Web 申報並截圖 QR Code。</p>
+                <a href="https://www.vjw.digital.go.jp/main/#/vjwplo001" class="btn-link btn-vjw" target="_blank">📲 Visit Japan Web 官網</a>
             </div>
         </div>
     </div>
@@ -175,10 +190,10 @@
 
             <div class="card">
                 <div class="title"><span>🌸</span> 新宿御苑櫻花地圖</div>
-                <img src="img/sakura2026.jpg" alt="[新宿御苑櫻花地圖]" class="sakura-map-img" onerror="this.src='https://placehold.co/600x400?text=Sakura+Map+2026'">
+                <img src="img/sakura2026.png" alt="[新宿御苑櫻花地圖]" class="sakura-map-img" onerror="this.src='https://placehold.co/600x400?text=Sakura+Map+2026'">
                 <div style="display:flex; gap:10px; margin-bottom:15px">
-                    <a href="https://www.google.com/maps/search/?api=1&query=新宿御苑前駅" class="map-link" target="_blank">🚆 新宿御苑前站</a>
-                    <a href="https://fng.or.jp/shinjuku/access/" class="map-link" style="background:#fff0f3" target="_blank">🔗 官方地圖連結</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=新宿御苑前駅" class="btn-link btn-map" style="flex:1" target="_blank">🚆 新宿御苑前站</a>
+                    <a href="https://fng.or.jp/shinjuku/access/" class="btn-link btn-map" style="background:#fff0f3; flex:1" target="_blank">🔗 官方連結</a>
                 </div>
                 
                 <div class="route-info">
@@ -242,12 +257,22 @@
                 ]
             },
             {
-                date: "4/01 (三) 富士山婚紗拍攝",
+                date: "4/01 (三) 富士山婚紗拍攝日",
                 events: [
-                    { time: "06:00", title: "拍攝日：一花開妝!!", desc: "富士山婚紗拍攝 (預祝大成功！)", url: "https://www.google.com/maps/search/?api=1&query=富士山" },
-                    { time: "18:00", title: "晚餐：とんかつ檍 銀座店", desc: "頂級炸豬排", url: "https://www.google.com/maps/search/?api=1&query=とんかつ檍+銀座4丁目店" },
-                    { time: "19:30", title: "晚餐備選：Toriton 晴空塔店", desc: "迴轉壽司", url: "https://www.google.com/maps/search/?api=1&query=Toriton+迴轉壽司+晴空塔" },
-                    { time: "20:30", title: "點心：Okoppe Milk Stand", desc: "牛奶霜淇淋", url: "https://www.google.com/maps/search/?api=1&query=Okoppe+Milk+Stand" }
+                    { time: "06:00", title: "抵達一花開始妝髮", desc: "富士山拍攝開工！", url: "https://www.google.com/maps/search/?api=1&query=東京都台東区西浅草2-27-8+DECOR+GRANDE" },
+                    { time: "08:45", title: "出發山中湖", desc: "啟程前往富士山區域" },
+                    { time: "10:30", title: "抵達山中湖 県道730号", desc: "經典全景富士山景點", url: "https://www.google.com/maps/search/?api=1&query=山中湖+県道730号+パノラマ台" },
+                    { time: "10:40", title: "開始拍攝 (Scene 1)", desc: "縣道景觀拍攝" },
+                    { time: "11:40", title: "轉景至平野之濱", desc: "湖畔倒影景點" },
+                    { time: "12:00", title: "抵達停車換裝", desc: "整理儀容與更換造型", url: "https://www.google.com/maps/search/?api=1&query=山中湖+平野の浜" },
+                    { time: "12:30", title: "開始拍攝 (Scene 2)", desc: "平野之濱湖畔拍攝" },
+                    { time: "13:40", title: "轉景河口湖長崎公園", desc: "河口湖北岸經典景點" },
+                    { time: "14:20", title: "抵達整裝", desc: "最後場景準備工作", url: "https://www.google.com/maps/search/?api=1&query=河口湖+長崎公園" },
+                    { time: "14:30", title: "開始拍攝 (Scene 3)", desc: "長崎公園櫻花/湖景拍攝" },
+                    { time: "16:50", title: "結束回程", desc: "辛苦一整天，準備回市區吃大餐！" },
+                    { time: "19:00", title: "慶祝晚餐：とんかつ檍", desc: "頂級炸豬排慶功宴", url: "https://www.google.com/maps/search/?api=1&query=とんかつ檍+銀座4丁目店" },
+                    { time: "備案", title: "晚餐：Toriton 晴空塔店", desc: "慶功壽司選擇", url: "https://www.google.com/maps/search/?api=1&query=Toriton+迴轉壽司+晴空塔" },
+                    { time: "點心", title: "Okoppe Milk Stand", desc: "晴空塔必吃牛奶霜淇淋", url: "https://www.google.com/maps/search/?api=1&query=Okoppe+Milk+Stand" }
                 ]
             },
             {
@@ -290,7 +315,7 @@
                         <div class="item-content">
                             <strong>${ev.title}</strong><br>
                             <small style="color:var(--text-sub)">${ev.desc}</small>
-                            ${ev.url ? `<br><a href="${ev.url}" class="map-link" target="_blank">📍 導航</a>` : ''}
+                            ${ev.url ? `<br><a href="${ev.url}" class="btn-link btn-map" target="_blank">📍 導航</a>` : ''}
                         </div>
                     </div>`;
             });
